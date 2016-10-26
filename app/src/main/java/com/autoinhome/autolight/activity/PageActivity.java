@@ -54,6 +54,8 @@ public class PageActivity extends BaseActivity implements PageView,PageAdapter.O
         presenter = new PagePresenter(this);
         adapter = new PageAdapter(this,this);
         initViews();
+
+        presenter.loadData(cid,page,SIZE);
     }
 
     private void initData() {
@@ -87,7 +89,6 @@ public class PageActivity extends BaseActivity implements PageView,PageAdapter.O
     @Override
     protected void onResume() {
         super.onResume();
-        presenter.loadData(cid,page,SIZE);
     }
 
     @Override

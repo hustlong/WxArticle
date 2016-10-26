@@ -47,13 +47,13 @@ public class YunBaUtil {
 					 .setContentTitle(topic).setContentText(msg)
 					 .setSound(alarmSound).setVibrate(pattern).setAutoCancel(true);
 			 // Creates an explicit intent for an Activity in your app
-			 Intent resultIntent = new Intent(context,
-			 CategoryActivity.class);
-			
-			 if (!YunBaUtil.isEmpty(topic))
-			 	resultIntent.putExtra(YunBaManager.MQTT_TOPIC, topic);
-			 if (!YunBaUtil.isEmpty(msg))
-			 	resultIntent.putExtra(YunBaManager.MQTT_MSG, msg);
+//			 Intent resultIntent = new Intent(context,
+//			 CategoryActivity.class);
+//
+//			 if (!YunBaUtil.isEmpty(topic))
+//			 	resultIntent.putExtra(YunBaManager.MQTT_TOPIC, topic);
+//			 if (!YunBaUtil.isEmpty(msg))
+//			 	resultIntent.putExtra(YunBaManager.MQTT_MSG, msg);
 			 // The stack builder object will contain an artificial back stack
 			 // for the
 			 // started Activity.
