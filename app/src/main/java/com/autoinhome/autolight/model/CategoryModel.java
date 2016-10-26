@@ -44,6 +44,11 @@ public class CategoryModel {
                 List<WxArticleCategory> categories = dao.queryBuilder()
                         .where(WxArticleCategoryDao.Properties.Id.isNotNull())
                         .list();
+//                try {
+//                    Thread.sleep(1500);
+//                } catch (InterruptedException e) {
+//                    e.printStackTrace();
+//                }
                 subscriber.onNext(categories);
                 subscriber.onCompleted();
             }
@@ -70,7 +75,7 @@ public class CategoryModel {
     /**
      * 从服务器上加载目录
      */
-    public void loadCategoryFromServer() {
+    private void loadCategoryFromServer() {
         Log.d("TAG","从服务器加载数据");
         Subscriber<List<WxArticleCategory>> subscriber = new Subscriber<List<WxArticleCategory>>() {
             @Override

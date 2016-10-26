@@ -26,6 +26,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".activity.CategoryActivity"
+            android:screenOrientation="portrait"
             android:launchMode="singleTask">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -33,6 +34,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".activity.PageActivity"
+            android:screenOrientation="portrait" />
+
+        <activity android:name=".activity.WebViewActivity"
+            android:screenOrientation="portrait" />
 
         <service android:name="io.yunba.android.core.YunBaService"> </service>
 

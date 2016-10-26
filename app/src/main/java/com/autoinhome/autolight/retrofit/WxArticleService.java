@@ -22,6 +22,6 @@ public interface WxArticleService {
     Observable<HttpResult<WxArticlePage>> getPage(
             @Query("key") String key,
             @Query("cid") String cid,
-            @Query("page") String page,
-            @Query("size") String size);
+            @Query("page") int page,
+            @Query("size") int size);
 }

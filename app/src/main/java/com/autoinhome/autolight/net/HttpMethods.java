@@ -25,10 +25,8 @@ import rx.schedulers.Schedulers;
 public class HttpMethods {
     private static final String BASE_URL = "http://apicloud.mob.com";
     private static final String KEY = "10193c61f77c8";
-
     private static final int DEFAULT_TIMEOUT = 5;
 
-    private Retrofit retrofit;
     private WxArticleService wxArticleService;
 
     //构造方法私有
@@ -37,7 +35,7 @@ public class HttpMethods {
         OkHttpClient.Builder httpClientBuilder = new OkHttpClient.Builder();
         httpClientBuilder.connectTimeout(DEFAULT_TIMEOUT, TimeUnit.SECONDS);
 
-        retrofit = new Retrofit.Builder()
+        Retrofit retrofit = new Retrofit.Builder()
                 .client(httpClientBuilder.build())
                 .addConverterFactory(GsonConverterFactory.create())
                 .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
@@ -78,7 +76,7 @@ public class HttpMethods {
      * @param page 当前页码
      * @param size 内容数量
      */
-    public void getPage(Subscriber<WxArticlePage> subscriber,String cid,String page,String size) {
+    public void getPage(Subscriber<WxArticlePage> subscriber,String cid,int page,int size) {
         wxArticleService.getPage(KEY,cid,page,size)
                 .map(new HttpResultFunc<WxArticlePage>())
                 .subscribeOn(Schedulers.io())
