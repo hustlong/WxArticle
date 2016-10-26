@@ -43,37 +43,35 @@ public class YunBaUtil {
 			
 			 long[] pattern = { 500, 500, 500 };
 			 NotificationCompat.Builder mBuilder = new
-			 NotificationCompat.Builder(
-			 context).setSmallIcon(R.mipmap.ic_launcher)
-			 .setContentTitle(topic).setContentText(msg)
-			 .setSound(alarmSound).setVibrate(pattern).setAutoCancel(true);
+			 NotificationCompat.Builder(context).setSmallIcon(R.mipmap.ic_launcher)
+					 .setContentTitle(topic).setContentText(msg)
+					 .setSound(alarmSound).setVibrate(pattern).setAutoCancel(true);
 			 // Creates an explicit intent for an Activity in your app
 			 Intent resultIntent = new Intent(context,
 			 CategoryActivity.class);
 			
 			 if (!YunBaUtil.isEmpty(topic))
-			 resultIntent.putExtra(YunBaManager.MQTT_TOPIC, topic);
+			 	resultIntent.putExtra(YunBaManager.MQTT_TOPIC, topic);
 			 if (!YunBaUtil.isEmpty(msg))
-			 resultIntent.putExtra(YunBaManager.MQTT_MSG, msg);
+			 	resultIntent.putExtra(YunBaManager.MQTT_MSG, msg);
 			 // The stack builder object will contain an artificial back stack
 			 // for the
 			 // started Activity.
 			 // This ensures that navigating backward from the Activity leads
-			 
 			 // of
 			 // your application to the Home screen.
-			 TaskStackBuilder stackBuilder = TaskStackBuilder.create(context);
-			 // Adds the back stack for the Intent (but not the Intent itself)
-			 stackBuilder.addParentStack(CategoryActivity.class);
-			
-			 // Adds the Intent that starts the Activity to the top of the
-			 
-			 stackBuilder.addNextIntent(resultIntent);
-			 PendingIntent resultPendingIntent =
-			 stackBuilder.getPendingIntent(
-			 0, PendingIntent.FLAG_UPDATE_CURRENT);
-			
-			 mBuilder.setContentIntent(resultPendingIntent);
+
+	//			 TaskStackBuilder stackBuilder = TaskStackBuilder.create(context);
+	//			 // Adds the back stack for the Intent (but not the Intent itself)
+	//			 stackBuilder.addParentStack(CategoryActivity.class);
+	//
+	//			 // Adds the Intent that starts the Activity to the top of the
+	//
+	//			 stackBuilder.addNextIntent(resultIntent);
+	//			 PendingIntent resultPendingIntent = stackBuilder.getPendingIntent(0, PendingIntent.FLAG_UPDATE_CURRENT);
+	//
+	//			 mBuilder.setContentIntent(resultPendingIntent);
+
 			 NotificationManager mNotificationManager = (NotificationManager)
 			 context.getSystemService(Context.NOTIFICATION_SERVICE);
 			 // mId allows you to update the notification later on.

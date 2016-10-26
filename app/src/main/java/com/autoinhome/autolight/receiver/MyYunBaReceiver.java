@@ -21,7 +21,7 @@ public class MyYunBaReceiver extends BroadcastReceiver {
             String msg = intent.getStringExtra(YunBaManager.MQTT_MSG);
 
             //在这里处理从服务器发布下来的消息， 比如显示通知栏， 打开 Activity 等等
-            YunBaUtil.showNotifation(context, topic, msg);
+            YunBaUtil.showNotifation(context, "微信精选" , msg);
         }
     }
 }
