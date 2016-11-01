@@ -3,6 +3,7 @@ package com.autoinhome.autolight.model;
 import android.util.Log;
 
 import com.autoinhome.autolight.entity.WxArticlePage;
+import com.autoinhome.autolight.net.ApiException;
 import com.autoinhome.autolight.net.HttpMethods;
 import com.autoinhome.autolight.presenter.PagePresenterInterface;
 
@@ -30,6 +31,7 @@ public class PageModel {
 
             @Override
             public void onError(Throwable e) {
+                Log.d("TAG","************" + e.getMessage());
                 presenterInterface.loadError();
             }
 

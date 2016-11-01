@@ -8,3 +8,7 @@
 * ButterKnife
 * GreenDao
 * MVP  architecture
+
+* 演示动画
+
+![demo](app/demo.gif)
